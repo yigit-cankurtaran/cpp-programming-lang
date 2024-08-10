@@ -1,4 +1,7 @@
+// instreams and outstreams
 #include <iostream>
+// string data type
+#include <string>
 
 int inch_to_cm()
 {
@@ -35,7 +38,7 @@ int inch_to_cm()
         break;
     }
 
-    std::cout << in << " in = " << cm << " cm\n";
+    std::cout << in << " in = " << cm << " cm";
     return 1;
 }
 
@@ -50,4 +53,18 @@ int main()
     // prints whatever number we put into num
     std::cout << num;
     inch_to_cm();
+
+    std::string str;
+    std::cout << "please enter your name: ";
+    // clearing newline from buffer
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    // otherwise it doesn't let us enter anything
+
+    getline(std::cin, str);
+    // using the getline function
+    // first is the istream we'll use
+    // 2nd is the variable we'll write into
+
+    std::cout << "Hello, " << str << "!\n";
+    return 0;
 }
