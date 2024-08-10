@@ -19,6 +19,8 @@ int my_pointers()
 
 int pointer_arithmetic()
 {
+    std::cout << std::endl;
+
     int arr[] = {10,
                  20,
                  30,
@@ -42,9 +44,32 @@ int pointer_arithmetic()
     return 0;
 }
 
+int dynamic_allocation()
+{
+    std::cout << std::endl;
+
+    // dynamically allocating memory
+    int *ptr = new int;
+    // we're assigning a value with dereferencing
+    *ptr = 25;
+
+    std::cout << "value at ptr is " << *ptr << std::endl;
+    std::cout << "address of ptr is " << ptr << std::endl;
+
+    delete ptr;
+    // we free the allocated memory with delete
+
+    std::cout << "new value of ptr is " << *ptr << std::endl;
+    std::cout << "new address of ptr is " << ptr << std::endl;
+    // the address is still there but the value is 0
+
+    return 0;
+}
+
 int main()
 {
     my_pointers();
     pointer_arithmetic();
+    dynamic_allocation();
     return 0;
 }
