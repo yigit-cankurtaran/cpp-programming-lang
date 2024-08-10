@@ -66,10 +66,45 @@ int dynamic_allocation()
     return 0;
 }
 
+int null_pointers()
+{
+    std::cout << std::endl;
+
+    int *ptr = nullptr;
+
+    if (ptr)
+    {
+        std::cout << "pointer is not null, value: " << *ptr << std::endl;
+    }
+    else
+    {
+        std::cout << "pointer is null, cannot dereference" << std::endl;
+        // this triggers
+    }
+
+    int var = 5;
+    ptr = &var;
+    // we point the pointer to the address of var now
+
+    if (ptr)
+    {
+        std::cout << "pointer is not null, value: " << *ptr << std::endl;
+        // this triggers
+        // null pointers don't have to stay null forever
+    }
+    else
+    {
+        std::cout << "pointer is null, cannot dereference" << std::endl;
+    }
+
+    return 0;
+}
+
 int main()
 {
     my_pointers();
     pointer_arithmetic();
     dynamic_allocation();
+    null_pointers();
     return 0;
 }
