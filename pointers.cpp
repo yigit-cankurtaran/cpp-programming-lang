@@ -17,8 +17,34 @@ int my_pointers()
     return 0;
 }
 
+int pointer_arithmetic()
+{
+    int arr[] = {10,
+                 20,
+                 30,
+                 40,
+                 50};
+    int *ptr = arr;
+    // created a pointer that points to my array
+
+    std::cout << "Array elements using pointer arithmetics" << std::endl;
+
+    for (int i = 0; i < 5; i++)
+    {
+        std::cout << *ptr << " ";
+        // output the value the pointer points at
+        ptr++;
+        // move to the next memory address
+    }
+
+    std::cout << std::endl;
+
+    return 0;
+}
+
 int main()
 {
     my_pointers();
+    pointer_arithmetic();
     return 0;
 }
