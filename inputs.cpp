@@ -2,6 +2,7 @@
 #include <iostream>
 // string data type
 #include <string>
+#include <typeinfo>
 
 int inch_to_cm()
 {
@@ -10,10 +11,16 @@ int inch_to_cm()
     char ch = 0;
 
     // this writes to x
-    std::cout << "\nenter length: ";
+    std::cout << "\nenter length (in int): ";
+    std::string y = typeid(x).name();
+    std::cout << "\n"
+              << "type of x is " << y << "\n";
+    //   i wanna check the type of the input
+    // and error handle that accordingly
+    // hmmm
     std::cin >> x;
     // this writes to ch
-    std::cout << "\nenter unit: ";
+    std::cout << "\nenter unit (char): ";
     std::cin >> ch;
 
     // the floating point number
@@ -55,7 +62,7 @@ int main()
     inch_to_cm();
 
     std::string str;
-    std::cout << "please enter your name: ";
+    std::cout << "\nplease enter your name: ";
     // clearing newline from buffer
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     // otherwise it doesn't let us enter anything
