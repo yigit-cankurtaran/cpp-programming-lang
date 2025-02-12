@@ -17,6 +17,8 @@ template <class T> class Vec: public vector <T> {
         T& operator[] (int i) { return at(i); } // we overload the [] operator
         // allows us to access Vec elements using array syntax (my_vec[5])
         // at performs bounds checking, returns at(i) method of the vector base class.
+        // if don't want to use this i can just use normal vecotrs with vector.at(i)
+            // instead of the array syntax
 
         const T& operator[] (int i) const { return at(i); } // same but const
         // const = we can't modify it, same as in js and whatnot
