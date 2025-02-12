@@ -73,5 +73,39 @@ int main() {
     std::cout << std::endl;
 
     // checking list size
+    std::cout << "size of fruits list: " << fruits.size() << std::endl;
+    std::cout << "is fruits list empty? " << (fruits.empty() ? "yes" : "no") << std::endl;
 
+    std::list<int> emptyList;
+    std::cout << "size of empty list: " << emptyList.size() << std::endl;
+    std::cout << "is empty list empty? " << (emptyList.empty() ? "yes" : "no") << std::endl;
+
+    // other useful stuff
+    std::list<int> listToSort = {5, 2, 8, 1, 9, 4};
+    std::cout << "sorted list: ";
+    listToSort.sort(); // sorts in ascending order and in place
+    for (int num : listToSort) { // for element in list
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    std::list<int> listToReverse = {1, 2, 3, 4, 5};
+    listToReverse.reverse(); // reverse the order of elements in place
+    std::cout << "reversed list: ";
+    for (int num : listToReverse) { // for element in list
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    std::list<int> list1 = {1, 2, 3};
+    std::list<int> list2 = {4, 5, 6};
+    list1.splice(list1.end(), list2); // move all elements from list2 to list1's end
+    std::cout << "list1 after splice: ";
+    for (int num : list1) { // for element in list
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "list2 after splice (should be empty): " << list2.size() << std::endl;
+
+    return 0;
 }
